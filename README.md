@@ -13,7 +13,7 @@
 
 <h2>🚀 Demo</h2>
 
-[this is the demo link](this is the demo link)
+[Live Demo](https://stally-ortega.github.io/SM-Templates/)
   
   
 <h2>🧐 Features</h2>
