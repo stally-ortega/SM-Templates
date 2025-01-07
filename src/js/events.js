@@ -348,9 +348,16 @@ document
 document
   .getElementById("txtAntivirus")
   .addEventListener("change", (evt) => {
-    document.getElementById("txtAntivirusMarca").value = "Cuenta con CrowdStrike";
-    document.getElementById("txtAntivirusMarca").setAttribute("disabled", String(evt.target.value).includes("servientrega"));
-    document.getElementById("txtFechaAntivirus").setAttribute("disabled", String(evt.target.value).includes("servientrega"));
+    let isCrowdStrike = String(evt.target.value).includes("servientrega");
+    if(isCrowdStrike) {
+      document.getElementById("txtAntivirusMarca").value = "Cuenta con CrowdStrike";
+      document.getElementById("txtAntivirusMarca").setAttribute("disabled", isCrowdStrike);
+      document.getElementById("txtFechaAntivirus").setAttribute("disabled", isCrowdStrike);
+    } else {
+      document.getElementById("txtAntivirusMarca").value = "";
+      document.getElementById("txtAntivirusMarca").removeAttribute("disabled");
+      document.getElementById("txtFechaAntivirus").removeAttribute("disabled");
+    }
   });
 
 document.getElementById("btnDatosPap").addEventListener("click", (evt) => {
